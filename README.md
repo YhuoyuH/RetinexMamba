@@ -6,6 +6,10 @@
 
 In the field of low-light image enhancement, traditional Retinex methods and deep learning-based techniques such as Retinexformer each display unique advantages and limitations. Traditional Retinex methods, by simulating the human eye's perception of brightness and color, decompose images into illumination and reflection components. However, they often fail to adequately consider noise and detail loss introduced by low lighting. Retinexformer, while optimizing illumination estimation through deep learning, suffers from high computational complexity and requires multi-stage training. Addressing these challenges, this paper introduces the RetinexMamba architecture, which not only inherits the physical intuitiveness of traditional Retinex methods but also incorporates the deep learning framework of Retinexformer, further integrating the efficient computational capabilities of State Space Models (SSMs). RetinexMamba enhances image illumination and repairs damages during the enhancement process through innovative illumination estimators and damage repairers, while substituting the IG-MSA in Retinexformer with a Fused-Attention mechanism to enhance model interpretability. Experimental results on the LOL dataset demonstrate that RetinexMamba surpasses existing deep learning methods based on Retinex theory in both quantitative and qualitative metrics, proving its effectiveness and superiority in low-light image enhancement tasks.
 
+中文链接请详见[CN]()
+
+
+
 ### 1.下载项目
 
 请您运行下面的命令以确保您将我们的项目部署到本地
