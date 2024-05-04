@@ -1,6 +1,6 @@
 # RetinexMamba
 
-这是"RetinexMamba:Retinex-based Mamba for Low-light Image Enhancement"的官方代码。论文请见{[Arxiv]()}
+This is the official code for "RetinexMamba: Retinex-based Mamba for Low-light Image Enhancement." For the paper, please see {[Arxiv]()}
 
 ## 摘要
 
@@ -10,41 +10,41 @@ In the field of low-light image enhancement, traditional Retinex methods and dee
 
 
 
-### 1.下载项目
+### 1.Download the project.
 
-请您运行下面的命令以确保您将我们的项目部署到本地
+Please run the following command to ensure that you deploy our project locally.
 
 ```python
 git clone https://github.com/YhuoyuH/RetinexMamba.git
 ```
 
-### 2.创建环境
+### 2.Create environment.
 
-注意，由于后续的"causal_conv1d"包仅存在于Linux系统上，因此请确保您所使用的操作环境是Linux
+Please note that since the "causal_conv1d" package is only available on Linux systems, ensure that your operating environment is Linux.
 
-### 2.1创建Conda环境
+### 2.1Create Conda environment.
 
-为了防止您和我们所使用的环境版本不一致的问题，我们建议您选择和我们相同的虚拟环境，您可直接安装我们已经为您打包好的环境，也可选择跟随我们的教程一步步安装。
+To prevent any discrepancies between your environment and ours, we recommend that you choose the same virtual environment as us. You can directly install the environment we have packaged for you, or choose to follow our tutorial to install it step by step.
 
-#### 2.1.1直接使用压缩包
+#### 2.1.1Directly use the compressed package.
 
-请将[百度网盘]()的RetinexMamba.tar.zip压缩包下载下来，并利用下面的命令进行解压
+Please download the RetinexMamba.tar.zip compressed package from [Baidu Netdisk]() and use the following command to unzip it.
 
 ```python
-cd /RetinexMamba.tar.zip所在的文件夹/
-tar -xzf RetinexMamba.tar.zip -C /你的anaconda的env文件路径/
+cd /path/to/folder/containing/RetinexMamba.tar.zip
+tar -xzf RetinexMamba.tar.zip -C /your/anaconda/envs/directory/
 ```
 
-若您采取这条命令，则不需要进行 "Create Environment"中的后续操作，直接跳到第二部分即可
+If you use this command, you do not need to follow the subsequent steps in "Create Environment." You can directly proceed to Part 3.
 
-#### 2.1.2利用包安装
+#### 2.1.2Use package installation.
 
 ```python
 conda create -n RetinexMamba python=3.8
 conda activate RetinexMamba
 ```
 
-### 2.2安装依赖项
+### 2.2Install dependencies.
 
 ```python
 pip install torch==1.13.0 torchvision==0.14.0 torchaudio==0.13.0 --extra-index-url https://download.pytorch.org/whl/cu117
@@ -60,24 +60,24 @@ pip install opencv-python joblib natsort tqdm tensorboard
 pip install einops gdown addict future lmdb numpy pyyaml requests scipy yapf lpips
 ```
 
-注意，您可能在安装"causal_conv1d"以及"mamba_ssm"会出现网络异常而导致一直卡在"Building wheel for mamba ssm(setup.py)"的问题。因此请您下载[百度网盘]()中的.whl文件拷贝在本地，并运行下面的命令进行手动安装
+Please note that you may encounter network issues during the installation of "causal_conv1d" and "mamba_ssm," which could cause the process to continuously hang at "Building wheel for mamba ssm (setup.py)." Therefore, please download the .whl files from [Baidu Netdisk]() and copy them locally. Then, run the following command for manual installation.
 
 ```python
-pip install 路径/文件名.whl
+pip install path/filename.whl
 ```
 
-#### 2.3安装BasicSR
+#### 2.3Install BasicSR.
 
 ```python
 cd /RetinexMamba/
 python setup.py develop --no_cuda_ext
 ```
 
-### 3.准备数据集
+### 3.Prepare the dataset.
 
-请从[百度网盘]()中下载数据集，并将data文件放置在RetinexMamba的文件夹下。
+Please download the dataset from [Baidu Netdisk]() and place the data file in the RetinexMamba folder.
 
-最终放置的结果如下：
+The final placement should be as follows:
 
 
 ```
@@ -107,9 +107,9 @@ python setup.py develop --no_cuda_ext
 |    |    |    |    |    |--Normal
 ```
 
-### 4.测试
+### 4.Test
 
-请确保pretrained_weights文件夹下有我们预训练的权重，如果您的权重文件丢失，请从[百度网盘]()下载。
+Please ensure that the pretrained_weights folder contains our pre-trained weights. If your weight files are missing, please download them from [Baidu Netdisk]().
 
 ```
 # activate the environment
@@ -125,27 +125,27 @@ python3 Enhancement/test_from_dataset.py --opt Options/RetinexFormer_LOL_v2_real
 python3 Enhancement/test_from_dataset.py --opt Options/RetinexFormer_LOL_v2_synthetic.yml --weights pretrained_weights/LOL_v2_synthetic.pth --dataset LOL_v2_synthetic
 ```
 
-### 5.模型参数以及浮点数评估
+### 5.Model parameters and FLOPS evaluation.
 
-若您想要查看模型的参数量以及浮点数，请您直接运行basicsr/models/archs中的ReinexMamba_arch即可，请注意将代码上方的
+If you want to view the model's parameter count and floating points, please directly run `ReinexMamba_arch` located in `basicsr/models/archs`. If the importation above the code is:
 
 ```
 from .vmamba_arch import SS2D
 from .fuse_block_arch import TransformerBlock
 ```
 
-改成
+change it into:
 
 ```
 from vmamba_arch import SS2D
 from fuse_block_arch import TransformerBlock
 ```
 
-若您想查看消融实验模型的参数量，请将他们从Ablation_Model中移到archs文件夹下并重复上述操作即可
+If you want to check the parameter count of the ablation study models, please move them from the `Ablation_Model` folder to the `archs` folder and repeat the above operation.
 
-### 6.训练
+### 6.Train
 
-请确保您已完整完成环境配置并且可以正常的推理出参数和浮点数
+Please ensure that you have fully completed the environment setup and can correctly infer the parameters and floating points.
 
 ```
 # activate the enviroment
