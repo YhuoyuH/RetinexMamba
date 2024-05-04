@@ -65,8 +65,7 @@ python setup.py develop --no_cuda_ext
 
 请从[百度网盘]()中下载数据集，并将data文件放置在RetinexMamba的文件夹下。
 
-<details close>
-<summary><b> 最终放置结果如下: </b></summary>
+最终放置的结果如下：
 
 
 ```
