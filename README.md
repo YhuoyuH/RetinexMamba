@@ -116,13 +116,13 @@ Please ensure that the pretrained_weights folder contains our pre-trained weight
 conda activate RetinexMamba
 
 # LOL-v1
-python3 Enhancement/test_from_dataset.py --opt Options/RetinexFormer_LOL_v1.yml --weights pretrained_weights/LOL_v1.pth --dataset LOL_v1
+python3 Enhancement/test_from_dataset.py --opt Options/RetinexMamba_LOL_v1.yml --weights pretrained_weights/LOL_v1.pth --dataset LOL_v1
 
 # LOL-v2-real
-python3 Enhancement/test_from_dataset.py --opt Options/RetinexFormer_LOL_v2_real.yml --weights pretrained_weights/LOL_v2_real.pth --dataset LOL_v2_real
+python3 Enhancement/test_from_dataset.py --opt Options/RetinexMamba_LOL_v2_real.yml --weights pretrained_weights/LOL_v2_real.pth --dataset LOL_v2_real
 
 # LOL-v2-synthetic
-python3 Enhancement/test_from_dataset.py --opt Options/RetinexFormer_LOL_v2_synthetic.yml --weights pretrained_weights/LOL_v2_synthetic.pth --dataset LOL_v2_synthetic
+python3 Enhancement/test_from_dataset.py --opt Options/RetinexMamba_LOL_v2_synthetic.yml --weights pretrained_weights/LOL_v2_synthetic.pth --dataset LOL_v2_synthetic
 ```
 
 ### 5.Model parameters and FLOPS evaluation.
