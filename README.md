@@ -152,12 +152,12 @@ Please ensure that you have fully completed the environment setup and can correc
 conda activate RetinexMamba
 
 # LOL-v1
-python3 basicsr/train.py --opt Options/RetinexFormer_LOL_v1.yml
+python3 basicsr/train.py --opt Options/RetinexMamba_LOL_v1.yml
 
 # LOL-v2-real
-python3 basicsr/train.py --opt Options/RetinexFormer_LOL_v2_real.yml
+python3 basicsr/train.py --opt Options/RetinexMamba_LOL_v2_real.yml
 
 # LOL-v2-synthetic
-python3 basicsr/train.py --opt Options/RetinexFormer_LOL_v2_synthetic.yml
+python3 basicsr/train.py --opt Options/RetinexMamba_LOL_v2_synthetic.yml
 ```
 
