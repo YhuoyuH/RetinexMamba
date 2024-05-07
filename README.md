@@ -60,7 +60,7 @@ pip install opencv-python joblib natsort tqdm tensorboard
 pip install einops gdown addict future lmdb numpy pyyaml requests scipy yapf lpips
 ```
 
-Please note that you may encounter network issues during the installation of "causal_conv1d" and "mamba_ssm," which could cause the process to continuously hang at "Building wheel for mamba ssm (setup.py)." Therefore, please download the .whl files from [Baidu Netdisk]() and copy them locally. Then, run the following command for manual installation.
+Please note that you may encounter network issues during the installation of "causal_conv1d" and "mamba_ssm," which could cause the process to continuously hang at "Building wheel for mamba ssm (setup.py)." Therefore, please download the .whl files from [Baidu Netdisk](https://pan.baidu.com/s/1ko_q8WlaagqxZVG-3M3zyg?pwd=0325) and copy them locally. Then, run the following command for manual installation.
 
 ```python
 pip install path/filename.whl
@@ -75,7 +75,7 @@ python setup.py develop --no_cuda_ext
 
 ### 3 Prepare the dataset.
 
-Please download the dataset from [Baidu Netdisk]() and place the data file in the RetinexMamba folder.
+If `data` is empty，please download the dataset from [Baidu Netdisk]() and place the data file in the RetinexMamba folder.
 
 The final placement should be as follows:
 
