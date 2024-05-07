@@ -75,7 +75,7 @@ python setup.py develop --no_cuda_ext
 
 ### 3 Prepare the dataset.
 
-If `data` is empty，please download the dataset from [Baidu Netdisk]() and place the data file in the RetinexMamba folder.
+If `data` is empty，please download the dataset from [Baidu Netdisk](https://pan.baidu.com/s/14XR8UnhmbEg71cPOfsqvgw?pwd=0325) and place the data file in the RetinexMamba folder.
 
 The final placement should be as follows:
 
@@ -109,7 +109,7 @@ The final placement should be as follows:
 
 ### 4 Test
 
-Please ensure that the pretrained_weights folder contains our pre-trained weights. If your weight files are missing, please download them from [Baidu Netdisk]().
+Please ensure that the `pretrained_weights` folder contains our pre-trained weights. If your weight files are missing, please download them from [Baidu Netdisk](https://pan.baidu.com/s/1eUNhlcmosTusq8LZ6XRA_A?pwd=0325).
 
 ```
 # activate the environment
