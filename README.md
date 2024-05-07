@@ -1,6 +1,6 @@
 # RetinexMamba
 
-This is the official code for "RetinexMamba: Retinex-based Mamba for Low-light Image Enhancement." For the paper, please see {[Arxiv]()}
+This is the official code for "RetinexMamba: Retinex-based Mamba for Low-light Image Enhancement." For the paper, please see {[Arxiv](https://arxiv.org/abs/2405.03349)}
 
 ## Abstract
 
@@ -10,7 +10,7 @@ For the Chinese link, please see[CN](https://github.com/YhuoyuH/RetinexMamba-CN)
 
 
 
-### 1.Download the project.
+### 1 Download the project.
 
 Please run the following command to ensure that you deploy our project locally.
 
@@ -18,15 +18,15 @@ Please run the following command to ensure that you deploy our project locally.
 git clone https://github.com/YhuoyuH/RetinexMamba.git
 ```
 
-### 2.Create environment.
+### 2 Create environment.
 
 Please note that since the "causal_conv1d" package is only available on Linux systems, ensure that your operating environment is Linux.
 
-### 2.1Create Conda environment.
+### 2.1 Create Conda environment.
 
 To prevent any discrepancies between your environment and ours, we recommend that you choose the same virtual environment as us. You can directly install the environment we have packaged for you, or choose to follow our tutorial to install it step by step.
 
-#### 2.1.1Directly use the compressed package.
+#### 2.1.1 Directly use the compressed package.
 
 Please download the RetinexMamba.tar.zip compressed package from [Baidu Netdisk]() and use the following command to unzip it.
 
@@ -37,14 +37,14 @@ tar -xzf RetinexMamba.tar.zip -C /your/anaconda/envs/directory/
 
 If you use this command, you do not need to follow the subsequent steps in "Create Environment." You can directly proceed to Part 3.
 
-#### 2.1.2Use package installation.
+#### 2.1.2 Use package installation.
 
 ```python
 conda create -n RetinexMamba python=3.8
 conda activate RetinexMamba
 ```
 
-### 2.2Install dependencies.
+### 2.2 Install dependencies.
 
 ```python
 pip install torch==1.13.0 torchvision==0.14.0 torchaudio==0.13.0 --extra-index-url https://download.pytorch.org/whl/cu117
@@ -66,14 +66,14 @@ Please note that you may encounter network issues during the installation of "ca
 pip install path/filename.whl
 ```
 
-#### 2.3Install BasicSR.
+#### 2.3 Install BasicSR.
 
 ```python
 cd /RetinexMamba/
 python setup.py develop --no_cuda_ext
 ```
 
-### 3.Prepare the dataset.
+### 3 Prepare the dataset.
 
 Please download the dataset from [Baidu Netdisk]() and place the data file in the RetinexMamba folder.
 
@@ -107,7 +107,7 @@ The final placement should be as follows:
 |    |    |    |    |    |--Normal
 ```
 
-### 4.Test
+### 4 Test
 
 Please ensure that the pretrained_weights folder contains our pre-trained weights. If your weight files are missing, please download them from [Baidu Netdisk]().
 
@@ -125,25 +125,11 @@ python3 Enhancement/test_from_dataset.py --opt Options/RetinexMamba_LOL_v2_real.
 python3 Enhancement/test_from_dataset.py --opt Options/RetinexMamba_LOL_v2_synthetic.yml --weights pretrained_weights/LOL_v2_synthetic.pth --dataset LOL_v2_synthetic
 ```
 
-### 5.Model parameters and FLOPS evaluation.
+### 5 Model parameters and FLOPS evaluation.
 
-If you want to view the model's parameter count and floating points, please directly run `ReinexMamba_arch` located in `basicsr/models/archs`. If the importation above the code is:
+If you want to view the model's parameter count and floating points, please directly run `ReinexMamba_arch` located in `basicsr/models/archs`. 
 
-```
-from .vmamba_arch import SS2D
-from .fuse_block_arch import TransformerBlock
-```
-
-change it into:
-
-```
-from vmamba_arch import SS2D
-from fuse_block_arch import TransformerBlock
-```
-
-If you want to check the parameter count of the ablation study models, please move them from the `Ablation_Model` folder to the `archs` folder and repeat the above operation.
-
-### 6.Train
+### 6 Train
 
 Please ensure that you have fully completed the environment setup and can correctly infer the parameters and floating points.
 
