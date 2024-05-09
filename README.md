@@ -10,7 +10,7 @@ For the Chinese link, please see[CN](https://github.com/YhuoyuH/RetinexMamba-CN)
 
 
 
-### 1 Download the project.
+### 1. Download the project.
 
 Please run the following command to ensure that you deploy our project locally.
 
@@ -18,7 +18,7 @@ Please run the following command to ensure that you deploy our project locally.
 git clone https://github.com/YhuoyuH/RetinexMamba.git
 ```
 
-### 2 Create environment.
+### 2. Create environment.
 
 Please note that since the "causal_conv1d" package is only available on Linux systems, ensure that your operating environment is Linux.
 
@@ -28,7 +28,7 @@ To prevent any discrepancies between your environment and ours, we recommend tha
 
 #### 2.1.1 Directly use the compressed package.
 
-Please download the RetinexMamba.tar.zip compressed package from [Baidu Netdisk]() and use the following command to unzip it.
+Please download the RetinexMamba.tar.zip compressed package from [Baidu Netdisk](https://pan.baidu.com/s/1w0XxF2YpWJFbQ2w_H4HbHw?pwd=0325) and use the following command to unzip it.
 
 ```python
 cd /path/to/folder/containing/RetinexMamba.tar.zip
@@ -60,7 +60,7 @@ pip install opencv-python joblib natsort tqdm tensorboard
 pip install einops gdown addict future lmdb numpy pyyaml requests scipy yapf lpips
 ```
 
-Please note that you may encounter network issues during the installation of "causal_conv1d" and "mamba_ssm," which could cause the process to continuously hang at "Building wheel for mamba ssm (setup.py)." Therefore, please download the .whl files from [Baidu Netdisk](https://pan.baidu.com/s/1ko_q8WlaagqxZVG-3M3zyg?pwd=0325) and copy them locally. Then, run the following command for manual installation.
+Please note that you may encounter network issues during the installation of `causal_conv1d` and `mamba_ssm`, which could cause the process to continuously hang at `Building wheel for mamba ssm (setup.py).` Therefore, please download the `.whl` files from [Baidu Netdisk](https://pan.baidu.com/s/1ko_q8WlaagqxZVG-3M3zyg?pwd=0325) and copy them locally. Then, run the following command for manual installation.
 
 ```python
 pip install path/filename.whl
@@ -73,7 +73,7 @@ cd /RetinexMamba/
 python setup.py develop --no_cuda_ext
 ```
 
-### 3 Prepare the dataset.
+### 3. Prepare the dataset.
 
 If `data` is empty，please download the dataset from [Baidu Netdisk](https://pan.baidu.com/s/14XR8UnhmbEg71cPOfsqvgw?pwd=0325) and place the data file in the RetinexMamba folder.
 
@@ -107,9 +107,11 @@ The final placement should be as follows:
 |    |    |    |    |    |--Normal
 ```
 
-### 4 Test
+### 4. Test
 
 Please ensure that the `pretrained_weights` folder contains our pre-trained weights. If your weight files are missing, please download them from [Baidu Netdisk](https://pan.baidu.com/s/1eUNhlcmosTusq8LZ6XRA_A?pwd=0325).
+
+#### 4.1 Test PSNR and SSIM
 
 ```
 # activate the environment
@@ -125,11 +127,21 @@ python3 Enhancement/test_from_dataset.py --opt Options/RetinexMamba_LOL_v2_real.
 python3 Enhancement/test_from_dataset.py --opt Options/RetinexMamba_LOL_v2_synthetic.yml --weights pretrained_weights/LOL_v2_synthetic.pth --dataset LOL_v2_synthetic
 ```
 
-### 5 Model parameters and FLOPS evaluation.
+#### 4.2 Test RMSE
+
+Please run the `RMSE.py` file in the `Enhancement` directory, and ensure that the code on line 54:
+
+```python
+ave_psnr, ave_ssim, ave_rmse = evaluate_raindrop('Your result dir', 'data GT')
+```
+
+where `Your result dir` and `data GT` have been replaced with `result` and `data/LOLV1 or LOLV2/../Test/GT` that you generated during the testing of PSNR and SSIM.
+
+### 5. Model parameters and FLOPS evaluation.
 
 If you want to view the model's parameter count and floating points, please directly run `ReinexMamba_arch` located in `basicsr/models/archs`. 
 
-### 6 Train
+### 6. Train
 
 Please ensure that you have fully completed the environment setup and can correctly infer the parameters and floating points.
 
@@ -147,3 +159,21 @@ python3 basicsr/train.py --opt Options/RetinexMamba_LOL_v2_real.yml
 python3 basicsr/train.py --opt Options/RetinexMamba_LOL_v2_synthetic.yml
 ```
 
+### 7.Acknowledgments
+
+We thank the following article and the authors  for their open-source codes.
+
+```
+@inproceedings{Retinexformer,
+  title={Retinexformer: One-stage Retinex-based Transformer for Low-light Image Enhancement},
+  author={Yuanhao Cai and Hao Bian and Jing Lin and Haoqian Wang and Radu Timofte and Yulun Zhang},
+  booktitle={ICCV},
+  year={2023}
+}
+
+@inproceedings{VM-Unet,
+  title={VM-UNet: Vision Mamba UNet for Medical Image Segmentation},
+  author={Jiacheng Ruan, Suncheng Xiang},
+  year={2024}
+}
+```
