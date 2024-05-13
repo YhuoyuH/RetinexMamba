@@ -58,6 +58,7 @@ pip install mamba_ssm==1.0.1
 pip install scikit-learn matplotlib thop h5py SimpleITK scikit-image medpy
 pip install opencv-python joblib natsort tqdm tensorboard
 pip install einops gdown addict future lmdb numpy pyyaml requests scipy yapf lpips
+pip install fvcore
 ```
 
 Please note that you may encounter network issues during the installation of `causal_conv1d` and `mamba_ssm`, which could cause the process to continuously hang at `Building wheel for mamba ssm (setup.py).` Therefore, please download the `.whl` files from [Baidu Netdisk](https://pan.baidu.com/s/1ko_q8WlaagqxZVG-3M3zyg?pwd=0325) and copy them locally. Then, run the following command for manual installation.
