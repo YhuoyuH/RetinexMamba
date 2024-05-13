@@ -140,16 +140,27 @@ where `Your result dir` and `data GT` have been replaced with `result` and `data
 
 ### 5. Model parameters and FLOPS evaluation.
 
-If you want to view the model's parameter count and floating points, please directly run `ReinexMamba_arch` located in `basicsr/models/archs`. 
+If you want to see the parameter count of the model, change lines 11 and 12 in `ReinexMamba_arch` from:
+
+```
+from .SS2D_arch import SS2D
+from .IFA_arch import IFA
+```
+
+change it into:
+
+```
+from .SS2D_arch import SS2D
+from IFA_arch import IFA
+```
+
+Then, simply run `ReinexMamba_arch`.
 
 ### 6. Train
 
 Please ensure that you have fully completed the environment setup and can correctly infer the parameters and floating points.
 
 ```
-# activate the enviroment
-conda activate RetinexMamba
-
 # LOL-v1
 python3 basicsr/train.py --opt Options/RetinexMamba_LOL_v1.yml
 
