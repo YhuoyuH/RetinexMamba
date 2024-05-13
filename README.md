@@ -178,4 +178,5 @@ We thank the following article and the authors  for their open-source codes.
 }
 ```
 
-This repo is based on [Retinexformer](https://github.com/caiyuanhao1998/Retinexformer)(ICCV 2023).
+This repo is based on [Retinexformer ](https://github.com/caiyuanhao1998/Retinexformer) (ICCV 2023).
+
