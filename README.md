@@ -150,7 +150,7 @@ from .IFA_arch import IFA
 change it into:
 
 ```
-from .SS2D_arch import SS2D
+from SS2D_arch import SS2D
 from IFA_arch import IFA
 ```
 
