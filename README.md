@@ -61,7 +61,7 @@ pip install einops gdown addict future lmdb numpy pyyaml requests scipy yapf lpi
 pip install fvcore
 ```
 
-Please note that you may encounter network issues during the installation of `causal_conv1d` and `mamba_ssm`, which could cause the process to continuously hang at `Building wheel for mamba ssm (setup.py).` Therefore, please download the `.whl` files from [Baidu Netdisk](https://pan.baidu.com/s/1ko_q8WlaagqxZVG-3M3zyg?pwd=0325) and copy them locally. Then, run the following command for manual installation.
+Please note that you may encounter network issues during the installation of `causal_conv1d` and `mamba_ssm`, which could cause the process to continuously hang at `Building wheel for mamba ssm (setup.py).` Therefore, please download the `.whl` files from [Baidu Netdisk](https://pan.baidu.com/s/1ko_q8WlaagqxZVG-3M3zyg?pwd=0325)  or [Google Drive](https://drive.google.com/drive/folders/1IKsjCBSRgcdvYkiqQnGWsqGEbefFV3zI?usp=sharing) and copy them locally. Then, run the following command for manual installation.
 
 ```python
 pip install path/filename.whl
@@ -76,7 +76,7 @@ python setup.py develop --no_cuda_ext
 
 ### 3. Prepare the dataset.
 
-If `data` is empty，please download the dataset from [Baidu Netdisk](https://pan.baidu.com/s/14XR8UnhmbEg71cPOfsqvgw?pwd=0325) and place the data file in the RetinexMamba folder.
+If `data` is empty，please download the dataset from [Baidu Netdisk](https://pan.baidu.com/s/14XR8UnhmbEg71cPOfsqvgw?pwd=0325) or [Google Drive](https://drive.google.com/file/d/1-5y1iUkETwa5rHIwO_45AzHj0dalhrAc/view?usp=sharing) and place the data file in the RetinexMamba folder.
 
 The final placement should be as follows:
 
@@ -110,7 +110,7 @@ The final placement should be as follows:
 
 ### 4. Test
 
-Please ensure that the `pretrained_weights` folder contains our pre-trained weights. If your weight files are missing, please download them from [Baidu Netdisk](https://pan.baidu.com/s/1eUNhlcmosTusq8LZ6XRA_A?pwd=0325).
+Please ensure that the `pretrained_weights` folder contains our pre-trained weights. If your weight files are missing, please download them from [Baidu Netdisk](https://pan.baidu.com/s/1eUNhlcmosTusq8LZ6XRA_A?pwd=0325) or [Google Drive](https://drive.google.com/drive/folders/1-73d2WbQBW7fznCRzRe762-Y1ZFR3t8O?usp=sharing).
 
 #### 4.1 Test PSNR and SSIM
 
